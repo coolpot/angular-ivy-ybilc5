@@ -5,7 +5,6 @@ import {
   RouterStateSnapshot,
   Router,
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
 import { AuthenticationService } from './authentication.service';
 
 @Injectable({
@@ -20,8 +19,12 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<boolean> {
-    // your code here
-    return of(true);
+  ): boolean {
+    const user = this.authenticationService.userValue;
+    if (user) {
+      return true;
+    }
+    this.router.navigate(['/']);
+    return false;
   }
 }

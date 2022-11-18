@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="app-container">
+    <form [formGroup]="loginForm">
+        <div class="input-group">
+            <label class="ito-label">Email</label>
+            <input class="ito-input" type="email" formControlName="email" required />
+            <ng-container *ngIf="f.email.touched && f.email.dirty">
+                <span class="error" *ngIf="f.email.errors?.required">Email is required. </span>
+                <span class="error" *ngIf="f.email.errors?.email">Must be a valid email. </span>
+            </ng-container>
+
+        </div>
+
+        <div class="input-group">
+            <label class="ito-label">Password</label>
+            <input class="ito-input" type="password" formControlName="password" required />
+            <ng-container *ngIf="f.password.touched && f.email.dirty">
+                <span class="error" *ngIf="f.password.errors?.required">Password is required. </span>
+            </ng-container>
+        </div>
+        <ng-container *ngIf="isLoginInvalid">
+            <div>
+                <span class="error">Please check your Email and Password.</span>
+            </div>
+        </ng-container>
+
+        <button class="ito-btn --primary mt-1" type="button"
+            [disabled]="f['email'].value === '' || f['password'].value === ''" (click)="login()">Login</button>
+    </form>
+</div>

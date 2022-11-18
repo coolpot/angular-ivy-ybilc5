@@ -7,6 +7,7 @@ export interface User {
   lastName: string;
   lastLogin: string;
   isAuthenticated: boolean;
+  token?: any;
 }
 
 interface DbUser {

@@ -1,0 +1,23 @@
+
+.app-container {
+  margin: 0 auto;
+  max-width: 500px;
+  margin-top: 20%;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.mt-1 {
+  margin-top: 10px;
+}
+
+input, button {
+  width: 100%;
+}
+
+.error {
+  color: var(--c-border-critical);
+  padding-top: -10px;
+}

@@ -17,8 +17,18 @@
   --f-default: 'Open Sans';
 }
 
-body {
+* {
+
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
   margin: 0;
+  padding: 0;
+}
+
+body {
   background-color: var(--c-background-light);
 }
 
@@ -75,7 +85,7 @@ code {
   &:disabled {
     pointer-events: none;
   }
-  &--primary {
+  &.--primary {
     background: var(--c-action-primary-default);
     color: var(--c-ink-onprimary);
     &:hover {
@@ -97,7 +107,6 @@ code {
 
 // Inputs
 .ito-input {
-  display: flex;
   align-items: center;
   background: #ffffff;
   padding: 8px 15px;
