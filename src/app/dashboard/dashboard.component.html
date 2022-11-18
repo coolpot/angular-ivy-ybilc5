@@ -1,4 +1,17 @@
 <section class="app-container">
   <h1>Dashboard</h1>
-  <p>Add something fancy!</p>
+  
+  <div class="profile-card">
+
+    <div id="profile-image">
+      <img [src]="user.profileImgUrl" alt="">
+    </div>
+    <div id="name">
+      <h3>
+        {{user.firstName || 'User'}} {{user.lastName || ''}}
+      </h3>
+      
+    </div>
+  </div>
+
 </section>

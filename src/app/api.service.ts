@@ -8,6 +8,7 @@ export interface User {
   lastLogin: string;
   isAuthenticated: boolean;
   token?: any;
+  profileImgUrl?: string;
 }
 
 interface DbUser {
@@ -16,6 +17,7 @@ interface DbUser {
   firstName: string;
   lastName: string;
   lastLogin: string;
+  profileImgUrl?: string;
 }
 
 const usersDb: DbUser[] = [
@@ -25,6 +27,7 @@ const usersDb: DbUser[] = [
     firstName: 'User 1 Fn',
     lastName: 'User 1 Ln',
     lastLogin: '2022-08-16T11:55:26+00:00',
+    profileImgUrl: 'https://www.cambridgesciencepark.co.uk/media/uploads/files/ITO.png'
   },
 ];
 
